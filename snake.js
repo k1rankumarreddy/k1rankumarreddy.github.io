@@ -27,7 +27,7 @@ function Snake() {
             var d = dist(this.x, this.y, pos.x, pos.y);
             if(d < 1) {
                 console.log('stating OVER');
-                document.getElementById("over").innerHTML = "Game Over Your score is "+((i+1)*10);
+                document.getElementById("over").innerHTML = "Game Over Your score is "+(this.tail.length*10);
                 //document.write(" For start again Press any key")   ;
                 this.total = 0;
                 this.tail = [];
