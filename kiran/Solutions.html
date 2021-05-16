@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title> Solutions </title>
+  </head>
+  <body>
+    <h1> Spiral order for binary tree </h1>
+    <p> #include <stdbool.h> 
+#include <stdio.h> 
+#include <stdlib.h> 
+struct node { 
+    int data; 
+    struct node* left; 
+    struct node* right; 
+}; 
+void printGivenLevel(struct node* root, int level, int ltr); 
+int height(struct node* node); 
+struct node* newNode(int data); 
+void printSpiral(struct node* root) { 
+    int h = height(root); 
+    int i; 
+    bool ltr = false; 
+    for (i = 1; i <= h; i++) { 
+        printGivenLevel(root, i,ltr);
+        ltr = !ltr; 
+    } 
+} 
+void printGivenLevel(struct node* root, int level, int ltr) { 
+    if (root == NULL) 
+        return; 
+    if (level == 1) 
+        printf("%d ", root->data); 
+    else if (level > 1) { 
+        if (ltr) { 
+            printGivenLevel(root->right, level - 1, ltr); 
+            printGivenLevel(root->left, level - 1, ltr); 
+        } 
+        else { 
+            printGivenLevel(root->left, level - 1, ltr); 
+            printGivenLevel(root->right, level - 1, ltr); 
+        } 
+    } 
+} 
+int height(struct node* node) { 
+    if (node == NULL) 
+        return 0; 
+    else { 
+        int lheight = height(node->left); 
+        int rheight = height(node->right); 
+        if (lheight > rheight) 
+            return (lheight + 1); 
+        else
+            return (rheight + 1); 
+    } 
+} 
+struct node* newNode(int data) { 
+    struct node* node = (struct node*) 
+        malloc(sizeof(struct node)); 
+    node->data = data; 
+    node->left = NULL; 
+    node->right = NULL; 
+    return (node);
+}
+int main() { 
+    struct node* root = newNode(111); 
+    root->left = newNode(2); 
+    root->right = newNode(3); 
+    root->left->left = newNode(7); 
+    root->left->right = newNode(6); 
+    root->right->left = newNode(5); 
+    root->right->right = newNode(4); 
+    root->left->left->left = newNode(11);
+    root->left->left->right = newNode(12);
+    root->left->right->left = newNode(13);
+    root->left->right->right = newNode(14);
+    root->right->left->left = newNode(15);
+    root->right->left->right = newNode(16);
+    root->right->right->left = newNode(17);
+    root->right->right->right = newNode(18);
+    /*
+    Spiral Order traversal of binary tree 
+    */
+    printSpiral(root); 
+    return 0; 
+} 
+      </p>
+      </head>
+      </html>
