@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title> Solutions </title>
+    <style>
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+    text-align: center;
+    margin-left: 50%;
+}     
+        
+    </style>
+  </head>
+  <body>
+      <div class="topnav">
+          <a class="active" href="https://k1rankumarreddy.github.io/kiran/Solutions.html">KIRAN KUMAR REDDY</a>
+  <div class="topnav-right">
+    <a href="https://www.jdoodle.com/c-online-compiler">Compiler</a><br>
+          </div></div>
+      
+          <h1>Given an 8 digit number without repetitions. We have to print all the possible combination of that number in the ascending order</h1>
+        <p>
+#include<studio.h><br>
+Void main() {<br>
+int i,j,t,n,temp,a[8];<br>
+printf("enter a eight digit number");<br>
+scanf("%d",&n);<br>
+t=n;<br>
+for(i=0;i<8;i++) {<br>
+a[i]=t%10;<br>
+t=t/10;<br>
+}<br>
+for(i=0;i<8;i++) {<br>
+for(j=i+1;j<8;j++) {<br>
+if(a[i]>a[j]) {<br>
+          temp=a[i];<br>
+a[i]=a[j];<br>
+a[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+for(i=0;i<8;i++)<br>
+printf("%d",&n);<br>
+getch();<br>
+
+                 }</p>
+      </body>
+      </head>
+      </html>
