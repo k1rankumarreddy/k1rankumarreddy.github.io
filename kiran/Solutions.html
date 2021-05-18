@@ -2,34 +2,42 @@
   <head>
     <title> Solutions </title>
     <style>
-      .button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-        float:right;
+  font-size: 17px;
 }
 
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
+.topnav a:hover {
+  background-color: red;
+  color: black;
 }
 
-.button1:hover {
-  background-color: #4CAF50;
+.topnav-right {
+  float: right;
+}
+.topnav a.active {
+  background-color: #04AA6D;
   color: white;
-}
+}     
+        
     </style>
   </head>
   <body>
-    <a href="https://www.jdoodle.com/c-online-compiler"><button class="button button1">Compiler</button></a>
+      <div class="topnav">
+          <a class="active" href="#home">KIRAN KUMAR REDDY</a>
+  <div class="topnav-right">
+    <a href="https://www.jdoodle.com/c-online-compiler">Compiler</a><br>
+          </div></div>
+      
     <h1> Spiral order for binary tree </h1>
     <p> #include <b><</b>stdbool.h<b>></b> <br>
 #include <b><</b>stdio.h<b>></b> <br>
